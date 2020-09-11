@@ -5,6 +5,14 @@ const getAllData = () => {
   return fetchDataCorona("all");
 };
 
-export default function useAll() {
+const getAllStatus = () => {
+  return fetchDataCorona("countries");
+};
+
+export function useGlobalData() {
   return useQuery("all", getAllData);
+}
+
+export function useStatesData() {
+  return useQuery("status", getAllStatus);
 }

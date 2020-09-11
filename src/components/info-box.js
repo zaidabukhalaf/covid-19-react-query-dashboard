@@ -1,12 +1,12 @@
 import React from "react";
 import NumberFormat from "react-number-format";
 
-const InfoBox = ({ textWhite, textRed }) => {
+const InfoBox = ({ textWhite, text }) => {
   return (
     <div className="info-box">
       <p className="text-red">
         <NumberFormat
-          value={textRed}
+          value={text}
           displayType="text"
           thousandSeparator={true}
         />
