@@ -1,7 +1,9 @@
 import React from "react";
 import "./App.css";
+
 import GlobalData from "./components/global-data-container";
 import Header from "./components/header";
+import Maps from "./components/map";
 import StateCases from "./components/state-cases";
 
 function App() {
@@ -14,6 +16,7 @@ function App() {
         </div>
         <div className="details">
           <StateCases />
+          <Maps />
         </div>
       </div>
     </div>

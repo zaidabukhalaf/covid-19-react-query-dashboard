@@ -3,7 +3,7 @@ import { useGlobalData } from "../api/all-api";
 import InfoBox from "./info-box";
 
 const GlobalData = () => {
-  const { status, data, error, isFetching } = useGlobalData();
+  const { status, data, error } = useGlobalData();
   if (status === "loading") {
     return <p>Loading...</p>;
   }
