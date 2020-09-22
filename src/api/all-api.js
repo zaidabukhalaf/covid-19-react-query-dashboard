@@ -9,9 +9,9 @@ const getAllStatus = () => {
   return fetchDataCorona("countries");
 };
 
-const getAllContinents = () => {
-  return fetchDataCorona("continents");
-};
+// const countryData = (country) => {
+//   return fetchCountryData(country);
+// };
 
 export function useGlobalData() {
   return useQuery("all", getAllData);
@@ -21,6 +21,6 @@ export function useStatesData() {
   return useQuery("status", getAllStatus);
 }
 
-export function useContinentsData() {
-  return useQuery("status", getAllContinents);
-}
+// export function useCountryData(country) {
+//   return useQuery("country", countryData(country));
+// }

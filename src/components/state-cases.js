@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { useStatesData, useContinentsData } from "../api/all-api";
+import { useStatesData } from "../api/all-api";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 
-const StateCases = () => {
+const StateCases = ({ setCountryName }) => {
   const [search, setSearch] = useState("");
   const { status, data, error } = useStatesData();
+
   if (status === "loading") {
     return <p>Loading...</p>;
   }
@@ -33,7 +34,11 @@ const StateCases = () => {
           <TabPanel>
             {search.length === 0
               ? data.map((d, i) => (
-                  <div key={i} className="state-status">
+                  <div
+                    key={i}
+                    className="state-status"
+                    onClick={() => setCountryName(d)}
+                  >
                     <span className="text-red numbers">{d.cases}</span>
                     <span className="text-white name">{d.country}</span>
                   </div>
@@ -41,7 +46,11 @@ const StateCases = () => {
               : data.map((d, i) => {
                   if (d.country.toLowerCase().includes(search.toLowerCase())) {
                     return (
-                      <div key={i} className="state-status">
+                      <div
+                        key={i}
+                        className="state-status"
+                        onClick={() => setCountryName(d)}
+                      >
                         <span className="text-red numbers">{d.cases}</span>
                         <span className="text-white name">{d.country}</span>
                       </div>

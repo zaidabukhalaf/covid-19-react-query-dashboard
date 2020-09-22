@@ -88,3 +88,21 @@ body {
 .map .leaflet-container {
   height: 100%;
 }
+.country {
+  flex: 0.5;
+  background-color: #333;
+  margin: 4px;
+}
+.flag {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.flag img {
+  display: block;
+  max-width: 100%;
+  height: 200px;
+}
+.country-name {
+  margin-bottom: 30px;
+}
