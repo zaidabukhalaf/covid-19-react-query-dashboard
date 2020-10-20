@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useStatesData } from "../api/all-api";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import NumberFormat from "react-number-format";
 
 const StateCases = ({ setCountryName }) => {
   const [search, setSearch] = useState("");
@@ -30,6 +31,7 @@ const StateCases = ({ setCountryName }) => {
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
+            placeholder="Search for country"
           />
           <TabPanel>
             {search.length === 0
@@ -39,7 +41,13 @@ const StateCases = ({ setCountryName }) => {
                     className="state-status"
                     onClick={() => setCountryName(d)}
                   >
-                    <span className="text-red numbers">{d.cases}</span>
+                    <span className="text-red numbers">
+                      <NumberFormat
+                        value={d.cases}
+                        displayType="text"
+                        thousandSeparator={true}
+                      />
+                    </span>
                     <span className="text-white name">{d.country}</span>
                   </div>
                 ))
@@ -51,7 +59,13 @@ const StateCases = ({ setCountryName }) => {
                         className="state-status"
                         onClick={() => setCountryName(d)}
                       >
-                        <span className="text-red numbers">{d.cases}</span>
+                        <span className="text-red numbers">
+                          <NumberFormat
+                            value={d.cases}
+                            displayType="text"
+                            thousandSeparator={true}
+                          />
+                        </span>
                         <span className="text-white name">{d.country}</span>
                       </div>
                     );

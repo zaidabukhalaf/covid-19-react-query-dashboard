@@ -16,6 +16,8 @@ const GlobalData = () => {
     );
   }
 
+  console.log(data);
+
   return (
     <>
       <InfoBox text={data.cases} textWhite="cases" />
